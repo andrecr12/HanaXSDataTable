@@ -60,26 +60,26 @@ Methods
 
 ### **process(conn, tableName [,debug]);**
 
-> Parameters:   
-> 
->  - *conn*: object `$.db.Connection`   
->  - *tableName*: string defining the table name
->  - *debug*: (optional) boolean that, if set to true, returns the queries executed internally inside the JSON output
-> 
-> Output:  JSON in the correct format to be understood by the plugin
+Parameters:   
+
+ - *conn*: object `$.db.Connection`   
+ - *tableName*: string defining the table name
+ - *debug*: (optional) boolean that, if set to true, returns the queries executed internally inside the JSON output
+
+Output:  JSON in the correct format to be understood by the plugin
 
 This method does all the work and returns the expected JSON.
 
 ### **setOptions(options);**
 Parameters:
 
-> - *options*: object with two optional keys
->     - *additionalFilters*: array of objects defining external filters to be applied to define a sub-set of records inside the table; 
->         - *col*: string matching the value of the parameter *columns[i][data]* that identifies the column;
->         - *operator*: string with desired operator on this filter. 
->                       Available options are >, <, >=, <=, =, !=, LIKE, NOT LIKE, IS NULL, IS NOT NULL.  
->         - *value*: string|number with value
->     - *columnFormatter*: object listing callbacks to manipulate/format values read from database;
+- *options*: object with two optional keys
+    - *additionalFilters*: array of objects defining external filters to be applied to define a sub-set of records inside the table; 
+        - *col*: string matching the value of the parameter *columns[i][data]* that identifies the column;
+        - *operator*: string with desired operator on this filter. 
+                      Available options are >, <, >=, <=, =, !=, LIKE, NOT LIKE, IS NULL, IS NOT NULL.  
+        - *value*: string|number with value
+    - *columnFormatter*: object listing callbacks to manipulate/format values read from database;
 
 This method enables additional features not covered by the DataTables definition of Server-Side Processing. Its use is optional, however, it may be very handful in different situations.
 
@@ -131,8 +131,8 @@ The following code would be interesting to filter only data for CLIENT_ID = 123 
 
 ### **getRequestParameters();**
 
-> Output: JSON containing all the parameters received by HTTP request
-> from front-end plugin.
+Output: JSON containing all the parameters received by HTTP request
+from front-end plugin.
 
  
 
