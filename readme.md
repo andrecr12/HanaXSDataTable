@@ -168,6 +168,6 @@ The DataTables version used in the development and tests is 1.10.4
 References
 -----
 
-[1] [SAP Hana XS Engine API](http://help.sap.com/hana/SAP_HANA_XS_JavaScript_API_Reference_en/$.html)
-[2] [DataTables Server-Side Processing Reference](https://datatables.net/manual/server-side)
+1. [SAP Hana XS Engine API](http://help.sap.com/hana/SAP_HANA_XS_JavaScript_API_Reference_en/$.html)
+2. [DataTables Server-Side Processing Reference](https://datatables.net/manual/server-side)
 
