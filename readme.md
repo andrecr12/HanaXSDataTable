@@ -58,7 +58,7 @@ This example can be found on example_1.xsjs
 Methods
 ------------
 
-##### **process(conn, tableName [,debug]);**
+### **process(conn, tableName [,debug]);**
 
 > Parameters:   
 > 
@@ -70,16 +70,16 @@ Methods
 
 This method does all the work and returns the expected JSON.
 
-##### **setOptions(options);**
+### **setOptions(options);**
 Parameters:
 
- - *options*: object with two optional keys
-     - *additionalFilters*: array of objects defining external filters to be applied to define a sub-set of records inside the table; 
-         - *col*: string matching the value of the parameter *columns[i][data]* that identifies the column;
-         - *operator*: string with desired operator on this filter. 
-Available options are >, <, >=, <=, =, !=, LIKE, NOT LIKE, IS NULL, IS NOT NULL.  
-         - *value*: string|number with value
-     - *columnFormatter*: object listing callbacks to manipulate/format values read from database;
+> - *options*: object with two optional keys
+>     - *additionalFilters*: array of objects defining external filters to be applied to define a sub-set of records inside the table; 
+>         - *col*: string matching the value of the parameter *columns[i][data]* that identifies the column;
+>         - *operator*: string with desired operator on this filter. 
+>                       Available options are >, <, >=, <=, =, !=, LIKE, NOT LIKE, IS NULL, IS NOT NULL.  
+>         - *value*: string|number with value
+>     - *columnFormatter*: object listing callbacks to manipulate/format values read from database;
 
 This method enables additional features not covered by the DataTables definition of Server-Side Processing. Its use is optional, however, it may be very handful in different situations.
 
@@ -129,7 +129,7 @@ The following code would be interesting to filter only data for CLIENT_ID = 123 
 
 
 
-##### **getRequestParameters();**
+### **getRequestParameters();**
 
 > Output: JSON containing all the parameters received by HTTP request
 > from front-end plugin.
@@ -153,15 +153,15 @@ The current available terms and the respective SQL command applied are below:
 
 | JavaScript      | SQL         |
 | :----------     | ---         |
-| '\$isNull\$'    | IS NULL     |
-| '\$isNotNull\$' | IS NOT NULL |
+| '$isNull$'      | IS NULL     |
+| '$isNotNull$'   | IS NOT NULL |
 
 
 Support
 -----------
 
 This library was initially developed using SAP HANA rev. 85 and tested in rev. 97 and rev. 102.
-As it uses the XS API methods from [\$.db](http://help.sap.com/hana/SAP_HANA_XS_JavaScript_API_Reference_en/$.db.html), it is supposed to work on almost all SAP HANA versions available.
+As it uses the XS API methods from [$.db](http://help.sap.com/hana/SAP_HANA_XS_JavaScript_API_Reference_en/$.db.html), it is supposed to work on almost all SAP HANA versions available.
 
 The DataTables version used in the development and tests is 1.10.4
 
