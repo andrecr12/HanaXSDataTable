@@ -461,8 +461,10 @@ function process(conn, tableName, debug){
             throw {'function': "DataTable.process", 'exception': "Param tablename empty"};
         }
         
-        // start library with parameters received by HTTP Request $.request
-        getRequestParameters();
+        // parameters initialization internally (optional)
+        if(typeof params.draw !== 'number'){
+            getRequestParameters();
+        }
         
         var tableFilterClause = getTableFilterClause();
         var additionalFilterClause = getAdditionalFilterClause();
@@ -480,7 +482,7 @@ function process(conn, tableName, debug){
                                 .replace('${FILTERS}', tableFilterClause)
                                 .replace('${ADD_FILTERS}', additionalFilterClause);
         
-        var countTotal = TOTAL_COUNT_STMT
+        var countTotal = TOTAL_COUNT_STMTde
                                 .replace('${TABLE}', tableName)
                                 .replace('${ADD_FILTERS}', additionalFilterClause);
         

@@ -14,14 +14,14 @@ try {
     
     dataTable.setOptions({
         additionalFilters: [
-            {col: 'COL_A',  operator: '=', value: 1234},
+            {col: 'CLIENT_ID',  operator: '=', value: 1234},
             ...
         ],
         columnFormatter: {
-            'DT_CREATED': function(dbValue){
+            'DT_SALES': function(dbValue){
                 // implement date parsing...
             }, 
-            'GROSS_AMOUNT': function(dbValue){
+            'TOTAL_SALES': function(dbValue){
                 return 'US$ '+ dbValue;
             }
         },

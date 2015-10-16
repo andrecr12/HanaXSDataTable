@@ -1,5 +1,8 @@
 // import DataTable Server-Side Processing library
-var dataTable = $.import("csc.dca.web.logic.lib", "DataTable");
+var dataTable = $.import("your.package.name", "DataTable");
+// or
+// var dataTable = $.import("/your/package/name/DataTable.xsjslib");
+
 
 // connect to Hana
 var conn = $.db.getConnection();
@@ -9,8 +12,7 @@ var output = {};
 try {
     var tableName = 'MY_TABLE';
     
-    var dtOptions = dataTable.getRequestParameters();
-    
+    // execute queries and retrieve output parameters expected by DataTable
     output = dataTable.process(conn, tableName);
 
     $.response.status = $.net.http.OK;
@@ -23,7 +25,7 @@ try {
     $.response.status = $.net.http.INTERNAL_SERVER_ERROR;
     $.response.contentType = "plain/text";
     $.response.setBody( output );
-    
+
 } finally {
     // close connection to Hana
     conn.close();
